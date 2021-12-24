@@ -13,7 +13,18 @@ struct ContentView: View {
     var body: some View {
         Text("\(number, specifier: "%.f")")
             .focusable()
-            .digitalCrownRotation($number)
+            .digitalCrownRotation(
+                $number,
+                from: 0.0,
+                through: 12.0,
+                by: 0.1,
+                sensitivity: .high,
+                isContinuous: true,
+                isHapticFeedbackEnabled: false
+            )
+            .onChange(of: number) {
+                print($0)
+            }
     }
 }
 
