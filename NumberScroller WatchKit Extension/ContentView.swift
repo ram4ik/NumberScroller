@@ -8,9 +8,10 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var number = 0.0
+    
     var body: some View {
-        Text("Hello, World!")
-            .padding()
+        Text(number.formatted(.number))
     }
 }
 
